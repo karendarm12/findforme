@@ -1,0 +1,137 @@
+<div data-spy="scroll" data-offset="0" data-target="#theMenu">
+
+	<nav class="menu" id="theMenu">
+		<div class="menu-wrap">
+			<h1 class="logo"><a href="#home">Find4Me</a></h1>
+			<i class="icon-remove menu-close"></i>
+
+
+			<a href="#" scroll-to="home" duration="1800">Home</a>
+			<a href="#" scroll-to="about" duration="1800">¿Qué es find4Me?</a>
+			<a href="#" scroll-to="busqueda" duration="1800">Búsqueda</a>
+			<a href="#" scroll-to="contact" duration="1800">Contáctenos</a>
+
+			<a href="https://www.facebook.com/karendarm11"><i class="icon-facebook"></i></a>
+			<a href="https://www.facebook.com/YiyoBass"><i class="icon-twitter"></i></a>
+			
+		</div>
+
+		<div id="menuToggle"><i class="icon-reorder"></i></div>
+	</nav>
+	
+	<section id="home" name="home"></section>
+	<div id="headerwrap">
+		<div class="container">
+			<div class="row centered">
+				<div class="logo">
+					<img src="images/3.png" class="img-responsive margin-auto" alt="" />				</div>
+			</div>
+			
+			<br>
+			<div class="row">
+				<h1>FIND FOR ME</h1>
+				<br>
+				<h3>¡En cuentra todo lo que buscas!</h3>
+				<br>
+				<br>
+				<div class="col-lg-6 col-lg-offset-3">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section id="busqueda" name="busqueda"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<h3>Realizar una nueva busqueda</h3>
+				<a href="/frontend/#/">
+					<img src="images/search.png">
+				</a>
+				
+				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+
+				<h3>Resulado para la busqueda: {{resultado.lenguaje}}</h3>
+				<p class="centered"><i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i></p>
+
+				<div class="col-lg-6 col-lg-offset-3 " ng-repeat="repo in resultado.repos">
+				<div class="container-respuesta">
+				<br><br>
+					<div class="container-respuesta-imgaen">
+						<img class="img-responsive" ng-src="{{repo.owner.avatar_url}}">
+					</div>
+					<br><br>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Nombre:</strong> &nbsp;{{repo.name}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Proyecto:</strong>&nbsp; {{repo.full_name}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Descripción:</strong> &nbsp;{{repo.description}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Estrellas:</strong> {{repo.stargazers_count}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Forks:</strong> &nbsp;{{repo.forks_count}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Creado:</strong>&nbsp;{{repo.created_at}}</h4>
+					</div>
+					<div>
+						<h4 class="cl-gray"><strong class="cl-white">Último commit:</strong>&nbsp;{{repo.updated_at}}</h4>
+					</div>
+					<div>
+						<h4><strong class="cl-white">Link:</strong>&nbsp;<a ng-href="{{repo.html_url}}">{{repo.full_name}}</a></h4>
+					</div>
+					</br></br>
+				</div>
+					<br><br>
+				</div>						
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<div class="elevator-button">
+						<h1 class="">Arriba</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<section id="contact" name="contact"></section>
+	<div id="f">
+		<div class="container">
+			<div class="row">
+				<h3>CONTACTA CON NOSOTROS</h3>
+				<p class="centered">
+					<i class="icon icon-circle"></i><i class="icon icon-circle"></i><i class="icon icon-circle"></i>
+				</p>
+				
+				<div class="col-lg-6 col-lg-offset-3">
+					<p>Déjanos tu comentario, propuesta o sugerencia.</p>
+				</div>
+				
+			</div>
+		</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-6 col-lg-offset-3">
+					<form action="/sugerencias/add" id="displayForm" method="post" accept-charset="utf-8"><div style="display:none;"><input type="hidden" name="_method" value="POST"/></div>
+					<div class="form-group">
+						<div class="input text"><label for="nombre">Nombre</label><input name="data[nombre]" class="form-control" placeholder="Ingrese su Nombre..." type="text" id="nombre"/></div>					</div>
+					<div class="form-group">
+						<div class="input email"><label for="email">Email</label><input name="data[email]" class="form-control" placeholder="Ingrese su Email..." type="email" id="email"/></div>					</div>
+					<div class="form-group">
+						<div class="input textarea"><label for="sugerencia">Sugerencia</label><textarea name="data[sugerencia]" class="form-control" placeholder="Ingrese su comentario..." cols="30" rows="6" id="sugerencia"></textarea></div>					</div>
+					<div class="form-group">
+						<div class="submit"><input  class="btn btn-warning" type="submit" value="ENVIAR"/></div>					</div>
+
+					</form>				</div>
+			</div>
+		</div>		
+</div>
